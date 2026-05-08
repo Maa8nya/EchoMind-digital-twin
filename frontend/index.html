@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EchoMind | Maanya's digital twin</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Outfit:wght@200;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+</head>
+<body>
+    <div class="grid-bg"></div>
+    
+    <div class="hud-container">
+        <header>
+            <div class="logo">ECHO_MIND</div>
+            <div class="persona-name-center">
+                <div class="persona-name">Maanya S Aithal</div>
+                <div class="persona-meta">
+                    <span class="meta-item">Software Engineer</span>
+                    <span class="meta-divider">|</span>
+                    <span class="meta-item">India</span>
+                    <span class="meta-divider">|</span>
+                    <a href="https://www.linkedin.com/in/maanya-s-aithal04/" target="_blank" class="meta-link">@maanya_s_aithal</a>
+                </div>
+            </div>
+            <div class="mobile-controls">
+                <div class="mobile-menu-toggle" id="mobile-menu-btn" style="display: none; cursor: pointer; font-size: 1.5rem; color: var(--accent-cyan);">☰</div>
+                <div class="mobile-terminal-toggle" id="mobile-terminal-btn" style="display: none; cursor: pointer; font-size: 1.2rem; color: var(--accent-purple);">📟</div>
+            </div>
+            <div id="system-clock" class="desktop-clock">--:--:--</div>
+        </header>
+
+        <!-- Sidebar Left -->
+        <aside class="panel sidebar-left">
+            <div class="sidebar-title">ECHO_MIND CORE</div>
+            
+            <div class="ai-core-container">
+                <div id="ai-core" class="ai-core"></div>
+                <!-- Voice Visualizer Overlay -->
+                <canvas id="voice-visualizer" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 120px; height: 120px; pointer-events: none; z-index: 5; opacity: 0.8;"></canvas>
+            </div>
+
+            <div class="stat-row">
+                <div class="stat-label"><span>COGNITIVE LOAD</span><span id="cpu-val">42%</span></div>
+                <div class="stat-bar-container"><div id="cpu-bar" class="stat-bar" style="width: 42%;"></div></div>
+            </div>
+
+            <div class="stat-row">
+                <div class="stat-label"><span>CONTEXT BUFFER</span><span id="mem-val">2.4GB</span></div>
+                <div class="stat-bar-container"><div id="mem-bar" class="stat-bar" style="width: 65%; background: var(--accent-purple);"></div></div>
+            </div>
+
+            <div class="stat-row">
+                <div class="stat-label"><span>RESPONSE TIME</span><span id="lat-val">12ms</span></div>
+                <div class="stat-bar-container"><div id="lat-bar" class="stat-bar" style="width: 15%;"></div></div>
+            </div>
+
+            <!-- Persona Protocol -->
+            <div class="sidebar-title" style="margin-top: 20px; border-top: 1px solid rgba(0, 243, 255, 0.2); padding-top: 15px;">
+                Persona Protocol
+            </div>
+
+            <div class="persona-selector">
+                <div class="mode-label" id="hr-label">HR</div>
+                <label class="switch">
+                    <input type="checkbox" id="challenge-mode-toggle">
+                    <span class="slider"></span>
+                </label>
+                <div class="mode-label" id="tech-label" style="color: var(--accent-purple); opacity: 0.5;">TECH LEAD</div>
+            </div>
+
+            <!-- Seniority Slider -->
+            <div class="sidebar-title" style="margin-top: 20px; border-top: 1px solid rgba(0, 243, 255, 0.2); padding-top: 15px;">
+                Experience Level: <span id="seniority-display" style="color: var(--accent-cyan);">Junior</span>
+            </div>
+
+            <div class="seniority-container" style="padding: 10px 0;">
+                <input type="range" id="seniority-slider" min="0" max="3" step="1" value="0" class="cyber-slider">
+                <div class="slider-labels" style="display: flex; justify-content: space-between; font-size: 0.6rem; opacity: 0.5; margin-top: 8px; font-family: 'Fira Code';">
+                    <span>JUN</span>
+                    <span>MID</span>
+                    <span>SEN</span>
+                    <span>CTO</span>
+                </div>
+            </div>
+
+            <!-- Report Generator -->
+             <div class="sidebar-title" style="margin-top: 20px; border-top: 1px solid rgba(0, 243, 255, 0.2); padding-top: 15px;">
+                Actions
+            </div>
+            <button id="download-report-btn" class="cyber-btn">
+                <span>📄</span> GENERATE REPORT
+            </button>
+        </aside>
+
+        <!-- Main Chat Area -->
+        <main class="panel main-chat">
+            <div id="chat-history">
+                <div class="message ai-message">
+                    <div class="message-label">Maanya's digital twin</div>
+                    Welcome to EchoMind — <b>an AI-powered digital twin trained on my projects, skills, and engineering mindset.</b>
+                </div>
+            </div>
+        </main>
+
+        <!-- Sidebar Right -->
+        <aside class="panel sidebar-right">
+            <div class="sidebar-title">System Terminal</div>
+            
+            <div id="debug-console" class="debug-console">
+                <div class="log-entry log-sys"><span class="log-time">[BOOT]</span> Kernel Initialized...</div>
+                <div class="log-entry log-info"><span class="log-time">[INFO]</span> Loading RAG indexes...</div>
+            </div>
+
+            <div style="margin-top: auto; font-size: 0.65rem; opacity: 0.5; font-family: 'Fira Code'; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 10px;">
+                <div>STATUS: <span style="color: #4db6ac">ONLINE</span></div>
+                <div>SECURE_CONN: <span style="color: #4db6ac">TRUE</span></div>
+            </div>
+        </aside>
+
+        <!-- Suggestion Chips -->
+        <div class="suggestion-chips" id="suggestion-chips">
+            <button class="suggestion-chip" data-question="Who are you?">Who are you?</button>
+            <button class="suggestion-chip" data-question="How many years of experience do you have?">Experience?</button>
+            <button class="suggestion-chip" data-question="What is your primary Tech Stack?">Tech Stack</button>
+            <button class="suggestion-chip" data-question="Tell me about your key projects.">Projects?</button>
+            <button class="suggestion-chip" data-question="What are your main soft skills?">Soft Skills?</button>
+            <button class="suggestion-chip" data-question="How can I contact you?">Contact?</button>
+            <button class="suggestion-chip" data-question="What is your educational background?">Education?</button>
+            <button class="suggestion-chip" data-question="What motivates you?">Motivation?</button>
+            <button class="suggestion-chip" data-question="What are your career goals?">Goals?</button>
+            <button class="suggestion-chip" data-question="What are your strengths and weaknesses?">Strengths/Weaknesses?</button>
+            <button class="suggestion-chip" data-question="Tell me about your biggest achievement">Achievements?</button>
+            <button class="suggestion-chip" data-question="What are your hobbies and interests?">Hobbies?</button>
+            <button class="suggestion-chip" data-question="Why should we hire you over other candidates?">💎 Why Hire You?</button>
+        </div>
+        <div class="scroll-hint" id="scroll-hint">Swipe for more →</div>
+
+        <!-- Input Section -->
+        <div class="input-panel">
+            <span class="input-prompt">&gt;</span>
+            <input type="text" id="user-input" placeholder="Type a question or select a topic..." autofocus autocomplete="off">
+            <button id="send-btn" class="cyber-btn cyber-btn-round" title="Send Message">
+                <span>➤</span>
+            </button>
+            <button id="mic-btn" class="cyber-btn cyber-btn-round" title="Voice Input">
+                🎤
+            </button>
+        </div>
+
+        <footer class="footer-info">
+            <span>&copy; 2026 ECHO_MIND by&nbsp;</span>
+            <a href="https://github.com/Maa8nya" target="_blank" class="footer-link">
+                <span class="github-icon">Maanya</span>
+            </a>
+            <span class="footer-separator">|</span>
+            <span class="footer-version">v1.3.0</span>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

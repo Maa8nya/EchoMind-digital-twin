@@ -1,0 +1,36 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.log
+venv/
+.venv/
+
+# --- Security ---
+.env
+.env.local
+
+# --- System Files ---
+.DS_Store
+Thumbs.db
+
+# --- IDE ---
+.vscode/
+.idea/
+
+# --- Builds ---
+dist/
+build/
+*.egg-info/
+
+# --- Frontend ---
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# --- Data ---
+test_report.pdf
+
+# --- Google Cloud ---
+my-project-key.json
