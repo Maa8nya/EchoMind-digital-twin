@@ -1,154 +1,168 @@
-# 🤖 Source Persona // AI Digital Twin
-![Version](https://img.shields.io/badge/Version-1.3.0-FF00FF?style=for-the-badge) ![Gemini 3](https://img.shields.io/badge/AI-Gemini_3-8E75B2?style=for-the-badge&logo=googlebard) ![TTS](https://img.shields.io/badge/Voice-Neural_TTS-FE740C?style=for-the-badge&logo=googlecloud) ![Cloud Run](https://img.shields.io/badge/Deploy-Cloud%20Run-4285F4?style=for-the-badge&logo=googlecloud) ![Docker](https://img.shields.io/badge/Container-Docker-2496ED?style=for-the-badge&logo=docker) ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge) 
+# 🧠 EchoMind // AI Digital Twin
 
-**An Autonomous AI Digital Twin representing the next generation of developer portfolios.** 
+![Version](https://img.shields.io/badge/Version-1.0.0-8A2BE2?style=for-the-badge)
+![AI](https://img.shields.io/badge/AI-Gemini_1.5_Flash-00C2FF?style=for-the-badge&logo=googlebard)
+![Frontend](https://img.shields.io/badge/Frontend-HTML%20%7C%20CSS%20%7C%20JS-121212?style=for-the-badge)
+![Backend](https://img.shields.io/badge/Backend-FastAPI-009688?style=for-the-badge&logo=fastapi)
 
-> 🏆 Submission for the ["New Year, New You"](https://dev.to/vero-code/source-persona-ai-twin-md9) Portfolio Challenge by Google AI
+> 🚀 An AI-powered Digital Twin that transforms a developer portfolio into a real-time interactive experience.
 
+---
 
-## 🚀 Overview
-**Source Persona** is a futuristic, neuro-symbolic framework designed to transform a static portfolio into an **interactive AI Digital Twin**. It allows recruiters and collaborators to skip the resume and talk directly to an intelligent agent trained on a developer's specific project data and technical philosophy.
+# 🌌 Overview
 
-Powered by **Google Gemini 3**, the system uses a sophisticated **Hybrid RAG** (Retrieval-Augmented Generation) engine to ground its responses in factual experience rather than hallucinations.
+**EchoMind** is an immersive AI Digital Twin platform built to represent a developer’s technical identity, projects, engineering mindset, and professional journey through conversational AI.
 
-> **Live Demo Context:** This deployment represents **Veronika Kashtanova** (AI Engineer & Founder), demonstrating how the engine processes real-world project history, technical skills, and professional context.
+Instead of browsing static resumes or portfolios, recruiters, collaborators, and developers can directly interact with an intelligent AI twin trained on:
 
-![Path from Full-Stack Web to Generative AI Research](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/245cponnddfmo7t7ltzg.png)
+- GitHub repositories
+- Technical projects
+- Skills & experience
+- Engineering philosophy
+- Portfolio context
 
-_Visualizing 10 years of transition from Full-Stack Web to Generative AI Research._
+EchoMind combines:
+- 🧠 LLM-powered conversations
+- 🎤 Voice interaction
+- ⚡ Real-time AI responses
+- 📊 Dynamic UI visualizations
+- 🖥️ Futuristic neural interface
 
+into a next-generation developer portfolio experience.
 
-### 🎥 Making Of & Demo
+---
 
-**✨ UPDATE v1.3:**
-*See the agent **understand and speak** in real-time, the migration to **Gemini 3**, plus the new "Tech Lead Mode", Security Defense Protocol, and full deployment in action:*
+# ✨ Features
 
-[![Watch the v1.3 Update](https://img.youtube.com/vi/62Wex2IcoXE/hqdefault.jpg)](https://www.youtube.com/watch?v=62Wex2IcoXE)
+## 🧠 AI Digital Twin
 
-<br>
+- Interactive AI representation of a developer
+- Context-aware responses powered by Gemini
+- Adaptive conversational behavior
+- Recruiter-style and Tech Lead-style interaction modes
 
-**Original Submission Demo:**
-*Watch the engineering process behind Source Persona (Gemini + Antigravity):*
+---
 
-[![Watch the Original Demo](https://img.youtube.com/vi/IUg6IYjWplM/maxresdefault.jpg)](https://www.youtube.com/watch?v=IUg6IYjWplM)
+## 🎭 Persona Protocol Modes
 
+### 👨‍💼 HR Mode
+- Friendly & professional responses
+- Communication-focused
+- Teamwork & soft-skill oriented
 
-## ⚙️ Architecture
+### 🧑‍💻 Tech Lead Mode
+- Deep technical discussions
+- Architecture-focused analysis
+- Engineering-critical responses
 
-The system relies on a serverless architecture deployed on **Google Cloud Run**, ensuring global scalability.
+---
 
-```mermaid
-graph TD
-    User((User/Recruiter)) --> WebUI[Cyberpunk HUD / Vanilla JS]
-    WebUI --> FastAPI[FastAPI Backend / Cloud Run]
-    
-    subgraph "Backend Services"
-        FastAPI --> AIAgent[AI Agent Service]
-        FastAPI --> TTS[Google Cloud TTS]
-        AIAgent --> RAG[Hybrid RAG Engine]
-        AIAgent --> ReportGen[HR Report Generator]
-    end
+## 🎚️ Experience Simulation Engine
 
-    subgraph "Knowledge Base"
-        RAG --> PDF[(PDF Resume: History)]
-        RAG --> JSON[(GitHub JSON: Live Code)]
-    end
+Dynamically simulate different experience levels:
 
-    subgraph "AI Core"
-        AIAgent --> Gemini[Google Gemini 3]
-    end
+- Junior Developer
+- Mid-Level Engineer
+- Senior Engineer
+- CTO Perspective
 
-    Gemini --> Logic[Logic & Visuals]
-    Logic --> WebUI
-    TTS --> WebUI
-    ReportGen --> WebUI
-```
+The AI changes response complexity based on the selected level.
 
-*See detailed documentation in [ARCHITECTURE.md](ARCHITECTURE.md).*
+---
 
+## 🎤 Voice Interaction
 
-## ✨ Key Features
+### Speech-to-Text
+- Real-time voice input using Web Speech API
 
-🧠 **Core Intelligence & Persona**
+### Text-to-Speech
+- Browser-native AI voice playback
+- No paid APIs required
+- Fully free voice interaction system
 
-- **🎚️ Dynamic Seniority Slider:** Adjust the AI's "IQ" and experience level in real-time. Slide from **Junior** (enthusiastic learner) to **CTO** (strategic, ROI-focused) to see how the answers change complexity.
+---
 
-- **🎭 Challenge Mode (HR vs Tech Lead):** A dual-protocol toggle.
-	- _HR Mode:_ Polite, diplomatic, focuses on soft skills and team fit.
-	- _Tech Lead Mode:_ Ruthless, technical, critical of "spaghetti code," and focused on architecture and latency.
+## 📊 GitHub Intelligence Engine
 
-- **🧠 Hybrid RAG Protocol (PDF + JSON):** The AI connects generative power with a dual-memory system. It processes a **static PDF Resume** for historical context (education, work history) and a **dynamic GitHub JSON** for real-time coding proof.
+EchoMind analyzes real GitHub repositories and project metadata to ground AI responses in actual development work.
 
-- **🗣️ Reverse Interview Capability:** Unlike passive bots, this "Senior-level" twin evaluates the recruiter. It occasionally asks sharp follow-up questions about engineering culture, CI/CD maturity, and technical debt.
+### Includes:
+- Repository analysis
+- Language detection
+- Tech stack extraction
+- Project indexing
+- Dynamic profile generation
 
-🎙️ **Neural Voice Link**
+---
 
-- **🎤 Bidirectional Voice Interface:** Don't just type—speak. The system integrates **Web Speech API** for real-time speech recognition (STT).
+## 🖥️ Futuristic Neural Interface
 
-- **🔊 Google Cloud Neural TTS:** The agent replies with a high-fidelity, life-like voice generated by Google Cloud Text-to-Speech.
+### Features:
+- Cyberpunk-inspired HUD
+- AI Core visualization
+- Live terminal stream
+- Animated neural effects
+- Real-time system metrics
+- Responsive UI design
 
-- **⏹️ Interactive Controls:** Features a "Listen" toggle for every AI message and a microphone input with visual feedback.
+---
 
-🖥️ **Cyberpunk HUD & Interface**
+## 📄 AI Report Generator
 
-- **📟 Live "Matrix" Terminal:** A real-time debug console (Right Sidebar) that visualizes the backend logic: RAG retrieval status, token usage, security checks, and latency metrics.
+Generate downloadable technical assessment reports based on conversations.
 
-- **💭 Visualized "Chain of Thought":** A holographic status line that reveals the AI's internal process (_Establishing Uplink -> Querying Vector DB -> Analyzing Context_) before generating a response.
+The system can:
+- Analyze discussions
+- Evaluate technical depth
+- Generate AI-assisted summaries
+- Produce recruiter-style reports
 
-- **📱 Adaptive UI:** Fully responsive design with collapsible sidebars (Menu/Terminal) for seamless use on smartphones or integration into external sites.
+---
 
-- **⚡ Suggestion Chips:** Quick-start interaction buttons for immediate engagement (_"Who are you?", "Tech Stack?", "Experience?"_).
+## 🛡️ AI Safety Layer
 
-- **✏️ Markdown Support:** Full rendering of technical documentation and code blocks.
+- Prompt injection detection
+- Defensive AI responses
+- Secure conversational handling
+- Identity grounding
 
-- **⌨️ Input Field Highlight:** Real-time focus effects for an immersive terminal feel.
+---
 
-🛡️ **Security & Utilities**
+# ⚙️ Tech Stack
 
-- **📄 Automated HR Report Generator:** Generates a downloadable **PDF Technical Assessment** on the fly. The AI analyzes the chat history, grades the candidate's skills based on the conversation, and provides a "Hire/No Hire" verdict.
+## Frontend
+- HTML5
+- CSS3
+- Vanilla JavaScript
+- Mermaid.js
+- Marked.js
 
-- **🛡️ Prompt Injection Defense:** Features a custom security layer that detects jailbreak attempts. If an attack is detected, the UI triggers a **Red Alert Mode**, switching the HUD to red and deploying an "Access Denied" defense.
+## Backend
+- Python
+- FastAPI
+- Uvicorn
 
-- **📊 Visualized Architecture (Mermaid.js):** The agent doesn't just explain code; it draws it. Integration with **Mermaid.js** allows the Twin to render real-time system diagrams and flowcharts directly in the chat.
+## AI
+- Google Gemini 3 Flash
+- Prompt Engineering
+- Hybrid RAG Architecture
 
-![Security Protocol & Hallucination Defense mechanism](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/mwhdafawgx4y72viacc7.png)
+## Voice
+- Web Speech API
+- Browser Speech Synthesis
 
-_The "Red Alert" Hallucination Defense mechanism kicking in against prompt injection._
-
-
-## 🛠️ Tech Stack
-
--   **AI Model:** Google **Gemini 3** (via Google GenAI SDK).
-
--   **Voice:** Google **Cloud Text-to-Speech** API.
-
--   **Prompt Engineering:** Google **AI Studio** (System instruction tuning & Hallucination defense).
-
--   **Dev Environment:** Google **Antigravity**.
-
--   **Backend:** Python 3.10, FastAPI, pypdf (Resume parsing), fpdf2 (Report Gen).
-
--   **Frontend:** Vanilla HTML5, CSS3 (Glassmorphism), JavaScript (Custom FUI).
-
--   **Visuals:** Mermaid.js & Marked.js.
-
--   **Deployment:** Docker, Google Cloud Run (Serverless).
-
-![Multi-Agent Orchestration](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/kikxsoxqd2rx8tao0slz.png)
-
-_The Multi-Agent Orchestration & RAG Pipeline visualizer showing the "Builder Workflow"._
+---
 
 
 ## 📥 Getting Started
 
 ### Prerequisites
 * **System:** Python 3.10+ or Docker installed.
-* **Keys:** A [Google AI Studio API Key](https://aistudio.google.com/).
 * *(Optional)*: A GitHub Token (if you want the agent to read your repositories live).
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/vero-code/source-persona.git
+git clone https://github.com/Maa8nya/EchoMind-digital-twin.git
 cd source-persona
 ```
 
@@ -174,24 +188,10 @@ python backend/app/services/github_sync.py
 
 ### 4. Run the Application
 
-You can run the digital twin using **Docker** (Recommended for stability) or **Python** (for development).
-
-#### Option A: Run with Docker (Recommended)
-
-This replicates the exact Google Cloud Run environment.
-
-```bash
-# 1. Build the container
-docker build -t source-persona .
-
-# 2. Run on port 8080
-docker run -p 8080:8080 --env-file .env source-persona
-```
-
-*Visit `http://localhost:8080` to initialize the Neural Interface.*
+You can run the digital twin using **Python** (for development).
 
 
-#### Option B: Run Locally (Python)
+#### Run Locally (Python)
 
 Useful for code inspection and rapid development.
 
@@ -203,37 +203,6 @@ pip install -r requirements.txt
 python backend/app/main.py
 ```
 
-*Visit `http://localhost:8000` to interact with the Source Persona.*
+*Visit `http://localhost:3000` to interact with the EchoMind.*
 
 
-## 📜 Changelog (v1.3.0)
-
--   **Feat:** Added Voice Interaction (Microphone input + Google Cloud TTS output).
-
--   **UI:** Updated Header hierarchy and Logo styling.
-
--   **UI:** Implemented horizontal scrolling for suggestion chips on mobile.
-
--   **UI:** Added Mobile Terminal toggle for better responsiveness.
-
--   **Fix:** Resolved Web Speech API interim results bug (preventing partial phrase submission).
-
--   **Fix:** Strict Identity Protocol (Agent no longer identifies as generic Gemini).
-
--   **Feat:** Added "Send" button and toggleable "Listen" buttons for messages.
-
--   **Chore:** Updated Footer with GitHub link and version badge.
-
-
-## 🎯 The "New Year, New You" Vision
-
-This project demonstrates how AI can bridge the gap between high-level engineering and personal representation, creating a **"Digital Twin"** that is always online, interactive, and grounded in truth. Powered by the cutting edge of **Google's AI** models.
-
-![Interactive capabilities demonstration](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/myrxg22l923er14kqevj.png)
-
-_Interactive visualization of the "Creative Stack" and Open Source contributions._
-
-
-## 📄 License
-
-Distributed under the MIT License. See `LICENSE` for more information.
