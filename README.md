@@ -35,6 +35,8 @@ into a next-generation developer portfolio experience.
 
 <img width="1897" height="898" alt="image" src="https://github.com/user-attachments/assets/e423da14-6096-43cb-824b-a1304f7415d0" />
 
+<br/>
+
 <img width="1897" height="898" alt="image" src="https://github.com/user-attachments/assets/54af18c8-2679-4320-9b94-60fa386b5eb3" />
 
 ### What EchoMind Does
