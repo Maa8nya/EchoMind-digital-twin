@@ -33,7 +33,7 @@ into a next-generation developer portfolio experience.
 ---
 ## Preview
 
-<img width="1897" height="898" alt="image" src="https://github.com/user-attachments/assets/e423da14-6096-43cb-824b-a1304f7415d0" />
+<img width="1907" height="898" alt="image" src="https://github.com/user-attachments/assets/5f89f4b6-ee60-4a65-8d6f-c82d00f06c03" />
 
 <br/>
 
