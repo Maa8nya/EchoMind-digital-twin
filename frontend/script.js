@@ -178,9 +178,43 @@ const VoiceSystem = {
     btn.innerHTML = '⏹ STOP';
     btn.classList.add('playing');
 
+     /* Improve pronunciation */
+text = text
+/* Clean text for natural speech */
+
+    /* Remove markdown */
+    .replace(/[*#`>-]/g, "")
+
+    /* Remove extra symbols */
+    .replace(/[•▪▶]/g, "")
+    .replace(/\bAI\b/g, "A I")
+    .replace(/\bML\b/g, "M L")
+    .replace(/\bAPI\b/g, "A P I")
+    .replace(/\bCI\/CD\b/g, "C I C D")
+    .replace(/\bUI\b/g, "U I")
+    .replace(/\bUX\b/g, "U X")
+    .replace(/\bSDE\b/g, "S D E");
+
     const utterance = new SpeechSynthesisUtterance(text);
 
-    utterance.lang = 'en-US';
+    utterance.lang = 'en-IN';
+
+/* Load Available Voices */
+const voices = window.speechSynthesis.getVoices();
+
+/* Indian Female Neural Voice */
+const femaleVoice = voices.find(
+    v => v.name === 'Microsoft Priya Online - English (India)'
+);
+
+if (femaleVoice) {
+    utterance.voice = femaleVoice;
+
+    Terminal.log(
+        `VOICE_SELECTED: ${femaleVoice.name}`,
+        'sys'
+    );
+}
 
     utterance.rate = 1;
 
